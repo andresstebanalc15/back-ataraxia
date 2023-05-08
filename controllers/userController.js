@@ -10,6 +10,22 @@ const getAllUsers = async (req, res) => {
   }
 };
 
+const login = async (req, res) => {
+  try {
+    const { email, password } = req.body;
+    const user = await User.findOne({ email });
+    // Verificar las credenciales del usuario
+    if (!user || user.password !== password) {
+      return res.status(401).json({ message: "Credenciales inválidas" });
+    }
+    // Inicio de sesión exitoso
+    return res.status(200).json({ message: "Inicio de sesión exitoso" });
+  } catch (error) {
+    console.log("Error al iniciar sesión:", error);
+    return res.status(500).json({ message: "Error al iniciar sesión" });
+  }
+};
+
 // Controlador para crear un nuevo usuario
 const createUser = async (req, res) => {
   try {
@@ -29,4 +45,4 @@ const createUser = async (req, res) => {
   }
 };
 
-module.exports = { getAllUsers, createUser };
+module.exports = { getAllUsers, createUser, login };
