@@ -19,7 +19,7 @@ const login = async (req, res) => {
       return res.status(401).json({ message: "Credenciales inválidas" });
     }
     // Inicio de sesión exitoso
-    return res.status(200).json({ message: "Inicio de sesión exitoso" });
+    return res.status(200).json({ user });
   } catch (error) {
     console.log("Error al iniciar sesión:", error);
     return res.status(500).json({ message: "Error al iniciar sesión" });
