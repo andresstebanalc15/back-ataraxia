@@ -2,6 +2,8 @@ const express = require("express");
 const connectDB = require("./database/connection");
 const userRoutes = require("./routes/userRoutes");
 const phraseRoutes = require("./routes/phraseRoutes");
+const mandalaRoutes = require("./routes/mandalaRoutes");
+const userMandalaRoutes = require("./routes/userMandalaRoutes");
 
 const dotenv = require("dotenv");
 const cors = require("cors");
@@ -19,6 +21,8 @@ connectDB();
 
 app.use("/users", userRoutes);
 app.use("/phrase", phraseRoutes);
+app.use("/mandala", mandalaRoutes);
+app.use("/userMandala", userMandalaRoutes);
 
 app.get("/", (req, res) => {
   res.send("¡Bienvenido a la API!");
