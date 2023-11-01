@@ -1,0 +1,22 @@
+{
+    "routes": [
+      { "handle": "filesystem" },
+      {
+        "src": "/users",
+        "dest": "/users.js"
+      },
+      {
+        "src": "/phrase",
+        "dest": "/phrase.js"
+      },
+      {
+        "src": "/mandala",
+        "dest": "/mandala.js"
+      },
+      {
+        "src": "/userMandala",
+        "dest": "/userMandala.js"
+      },
+      { "handle": "hit", "src": "/(.*)", "status": 404 }
+    ]
+  }
