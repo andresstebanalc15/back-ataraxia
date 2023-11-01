@@ -17,6 +17,8 @@
         "src": "/userMandala",
         "dest": "/userMandala.js"
       },
-      { "handle": "hit", "src": "/(.*)", "status": 404 }
+      { "src": "/(.*)", "status": 404 }
     ]
   }
+  
+  
